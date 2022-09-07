@@ -1,0 +1,16 @@
+current directory: /home/rails/Fbook/vendor/bundle/ruby/3.0.0/gems/strscan-3.0.4/ext/strscan
+/usr/share/rvm/rubies/ruby-3.0.0/bin/ruby -I /usr/share/rvm/rubies/ruby-3.0.0/lib/ruby/3.0.0 -r ./siteconf20220824-28421-qj1gw9.rb extconf.rb
+checking for onig_region_memsize() in ruby.h... yes
+creating Makefile
+
+current directory: /home/rails/Fbook/vendor/bundle/ruby/3.0.0/gems/strscan-3.0.4/ext/strscan
+make "DESTDIR=" clean
+
+current directory: /home/rails/Fbook/vendor/bundle/ruby/3.0.0/gems/strscan-3.0.4/ext/strscan
+make "DESTDIR="
+compiling strscan.c
+linking shared-object strscan.so
+
+current directory: /home/rails/Fbook/vendor/bundle/ruby/3.0.0/gems/strscan-3.0.4/ext/strscan
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 strscan.so ./.gem.20220824-28421-davpwy

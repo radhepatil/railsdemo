@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+<hr>
+<% @posts.each do |post| %>
+  <div class="card">
+    <div class="card-body">
+
+       <%#= image_tag(post.image) %>
+      <%#= image_tag(url_for(post.image)) %>
+      <h5 class="card-title"><%= post.user.full_name.capitalize %></h5>
+      <h5 class="card-title"><%= link_to post.title, post_path(post) %></h5>
+      <p class="card-text"><%= truncate(post.body, length: 60) %></p>
+      <p class="m-1"> <%= "#{time_ago_in_words(post.created_at)} ago" %> </p>
+      <h6><%= pluralize(post.comments.size, "comments") %> |
+      <%= pluralize(post.likes.size, "like") %></h6>
+      <%= link_to "Like",  post_path(post, like: true), method: 'post' %> |
+      <%= link_to 'Comment',  new_post_comment_path(post), method: 'post' %> |
+      <%= link_to 'Edit', edit_post_path(post), class: 'card-link' %> |
+      <%=link_to("Delete",  post_path(post), method: :destroy) %>
+  </tr>
+    </div>
+  </div>
+<% end %>

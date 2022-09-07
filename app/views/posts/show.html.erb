@@ -1,0 +1,32 @@
+<div class="card my-5">
+  <div class="card-body">
+    <p id="notice"><%= notice %></p>
+
+    <h1 class="text-center"><%= @post.title %></h1>
+    <hr >
+    <div class="my-4">
+      <%= simple_format(@post.body) %>
+    </div>
+    <p class="m-1"> <%= "#{time_ago_in_words(@post.created_at)} ago" %> </p>
+      <h6><%= pluralize(@post.comments.size, "comments") %> |
+      <%= pluralize(@post.likes.size, "like") %></h6>
+      <%= link_to "Like",  post_path(@post, like: true), method: 'post' %> |
+      <%= link_to 'Comment', post_comments_path(@post) %> |
+      <%= link_to 'Edit', edit_post_path(@post), class: 'card-link' %> |
+      <%=link_to("Delete",  post_path(@post), method: :destroy) %>
+      <%= link_to 'Back', posts_path, class: 'btn btn-light' %>
+    </div>
+</div>
+<div class="card my-1">
+  <div class="card-body">
+    <p class="font-weight-bold">Comments</p>
+    <%= form_with(model: [@post, @post.comments.build]) do |f| %>
+      <div class="form-group">
+        <%= f.label 'New comment' %>
+        <%= f.text_area :body, class: 'form-control' %>
+      </div>
+      <%= f.submit 'Submit', class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>
+<%= render @post.comments %>

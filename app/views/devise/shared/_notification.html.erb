@@ -1,0 +1,6 @@
+<div class=”modal-body”>
+  <% object.each do |n|%>
+    <% if n.notice_type == “friendRequest”%>
+      <% user = notification_find(n, ‘friendRequest’)%>
+      <%= “Friend Request sent from #{user.full_name}” %>
+    <% end %>

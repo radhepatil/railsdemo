@@ -1,0 +1,14 @@
+<div class="card my-1">
+  <div class="card-body">
+    <p class="font-weight-bold">Comments</p>
+
+    <%=  form_with(model: @comment, url: post_comments_url(@post), method: :create, local: true) do |f| %>
+
+      <div class="form-group">
+        <%= f.label 'New comment' %>
+        <%= f.text_area :content, class: 'form-control' %>
+      </div>
+      <%= f.submit 'Submit', class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>

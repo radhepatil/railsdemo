@@ -1,0 +1,9 @@
+<% @users.each do |user| %>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title"><%= user.full_name.capitalize %></h5>
+      <h6><%= pluralize(user.posts.size, "posts") %></h6>
+      <h6><%#= pluralize(user.friends.size, "friends") %></h6>
+    </div>
+  </div>
+<% end %>
